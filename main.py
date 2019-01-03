@@ -2,12 +2,12 @@ from selenium import webdriver
 from time import sleep
 
 def login(browser):
-    browser.get("https://passport.baidu.com/v2/?login")
+    browser.get("https://www.baifubao.com/user/0/login/0")
     browser.maximize_window()
 
     sleep(2)
 
-    browser.find_element_by_id("TANGRAM__PSP_3__footerULoginBtn").click()
+    browser.find_element_by_id("TANGRAM__PSP_4__sms_btn_back").click()
     browser.find_element_by_name("userName").clear()
     browser.find_element_by_name("userName").send_keys('三淼服装')
     # browser.find_element_by_name("userName").send_keys('sep555@qq.com')
@@ -16,12 +16,12 @@ def login(browser):
     browser.find_element_by_name("password").send_keys('!@sanmiao90')
     # browser.find_element_by_name("password").send_keys('Song19870919')
     sleep(5)
-    browser.find_element_by_id("TANGRAM__PSP_3__submit").click()
+    browser.find_element_by_id("TANGRAM__PSP_4__submit").click()
 
 browser = webdriver.Firefox()
 login(browser)
 
-for phonevarint in range(418,10000):
+for phonevarint in range(520,10000):
     phonevar = "186"+str(phonevarint).zfill(4)+"0056"
     print("正在测试:"+phonevar)
     sleep(10)
@@ -36,8 +36,8 @@ for phonevarint in range(418,10000):
         print("找到号码："+phonevar)
         break
 
-    if phonevarint % 20 == 0:
-        print("达到次数，正在等待。。。")
-        sleep(1800)
+    # if phonevarint % 20 == 0:
+    #     print("达到次数，正在等待。。。")
+    #     sleep(1800)
 
-browser.close()
+# browser.close()
