@@ -21,7 +21,7 @@ def login(browser):
 browser = webdriver.Firefox()
 login(browser)
 
-for phonevarint in range(622,10000):
+for phonevarint in range(841,10000):
     phonevar = "186"+str(phonevarint).zfill(4)+"0056"
     print("正在测试:"+phonevar)
     sleep(10)
@@ -36,8 +36,8 @@ for phonevarint in range(622,10000):
         print("找到号码："+phonevar)
         break
 
-    # if phonevarint % 20 == 0:
-    #     print("达到次数，正在等待。。。")
-    #     sleep(1800)
+    if phonevarint % 20 == 0:
+        print("达到次数，正在等待。。。")
+        sleep(3600)
 
 # browser.close()
