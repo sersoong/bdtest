@@ -1,6 +1,9 @@
 from selenium import webdriver
 from time import sleep
 
+start=1016
+end=10000
+
 def login(browser):
     browser.get("https://www.baifubao.com/user/0/login/0")
     browser.maximize_window()
@@ -21,7 +24,7 @@ def login(browser):
 browser = webdriver.Firefox()
 login(browser)
 
-for phonevarint in range(841,10000):
+for phonevarint in range(start,end):
     phonevar = "186"+str(phonevarint).zfill(4)+"0056"
     print("正在测试:"+phonevar)
     sleep(10)
@@ -36,8 +39,11 @@ for phonevarint in range(841,10000):
         print("找到号码："+phonevar)
         break
 
-    if phonevarint % 20 == 0:
-        print("达到次数，正在等待。。。")
-        sleep(3600)
+    # if phonevarint % 20 == 0:
+    #     print("达到次数，正在等待。。。")
+    #     sleep(3600)
+    if phonevarint == (start + 80):
+        print("达到次数上限，退出。。。当前号码： " + phonevar)
+        break
 
 # browser.close()
