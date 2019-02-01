@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-start=1347
+start=1428
 end=10000
 
 def login(browser):
