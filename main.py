@@ -1,9 +1,9 @@
 from selenium import webdriver
 from time import sleep
 
-start=1694
+start=1710
 end=10000
-
+errcount = 0
 def login(browser):
     browser.get("https://www.baifubao.com/user/0/login/0")
     browser.maximize_window()
@@ -25,17 +25,24 @@ browser = webdriver.Firefox()
 login(browser)
 
 for phonevarint in range(start,end):
-    phonevar = "186"+str(phonevarint).zfill(4)+"0056"
-    print("正在测试:"+phonevar)
-    sleep(10)
-    browser.get("https://www.baifubao.com/wireless/0/transfer/0/wap/0/start/0?username="+phonevar)
-    sleep(10)
+    for errcount in range(0,3):
+        phonevar = "186"+str(phonevarint).zfill(4)+"0056"
+        print("正在测试:"+phonevar)
+        sleep(15)
+        browser.get("https://www.baifubao.com/wireless/0/transfer/0/wap/0/start/0?username="+phonevar)
+        sleep(15)
 
-    if(browser.page_source.find('系统正忙')>0):
-        print("系统出错，目前号码: "+phonevar)
+        if(browser.page_source.find('系统正忙')>0):
+            print("系统出错，目前号码: "+phonevar)
+        else:
+            break
+        
+    print("检查错误："+errcount+"次")
+    if errcount == 2:
+        print("系统出错次数达到3次，正在退出")
         break
 
-    if(browser.page_source.find('不支持给自己转账')>0 or browser.page_source.find('三')>0):
+    if(browser.page_source.find('不支持给自己转账')>0):
         print("找到号码："+phonevar)
         break
 
