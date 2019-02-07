@@ -994,3 +994,18 @@ console.error: BroadcastService:
 
 [Child 81104, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 [Child 811549535629457	Marionette	INFO	Stopped listening on port 49859
+1549535645181	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox latest\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\SONGWL~1.SAN\\AppData\\Local\\Temp\\rust_mozprofile.EhJf3HjKjqdH"
+1549535645680	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1549535645680	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1549535648588	Marionette	INFO	Listening on port 50100
+1549535648601	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+[Child 79528, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 79521549535826489	Marionette	INFO	Stopped listening on port 50100
