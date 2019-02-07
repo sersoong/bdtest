@@ -37,7 +37,7 @@ for phonevarint in range(start,end):
         else:
             break
         
-    print("检查错误："+errcount+"次")
+    print("检查错误："+str(errcount)+"次")
     if errcount == 2:
         print("系统出错次数达到3次，正在退出")
         break
