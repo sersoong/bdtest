@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-start=1807
+start=1939
 end=10000
 errcount = 0
 def login(browser):
@@ -39,7 +39,7 @@ for phonevarint in range(start,end):
         
     print("检查错误："+str(errcount)+"次")
     if errcount == 4:
-        print("系统出错次数达到3次，正在退出")
+        print("系统出错次数达到 %d 次，正在退出" % errcount)
         break
 
     if(browser.page_source.find('不支持给自己转账')>0):
