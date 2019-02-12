@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-start=1939
+start=2020
 end=10000
 errcount = 0
 def login(browser):
