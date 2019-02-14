@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-start=2079
+start=2121
 end=10000
 errcount = 0
 def login(browser):
@@ -25,7 +25,7 @@ browser = webdriver.Firefox()
 login(browser)
 
 for phonevarint in range(start,end):
-    for errcount in range(0,5):
+    for errcount in range(0,10):
         phonevar = "186"+str(phonevarint).zfill(4)+"0056"
         print("正在测试:"+phonevar)
         sleep(15)
@@ -38,7 +38,7 @@ for phonevarint in range(start,end):
             break
         
     print("检查错误："+str(errcount)+"次")
-    if errcount == 4:
+    if errcount == 9:
         print("系统出错次数达到 %d 次，正在退出" % errcount)
         break
 
