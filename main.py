@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-start=2445
+start=2526
 end=10000
 errcount = 0
 def login(browser):
@@ -50,7 +50,7 @@ for phonevarint in range(start,end):
     #     print("达到次数，正在等待。。。")
     #     sleep(3600)
     if phonevarint == (start + 80):
-        print("达到次数上限，退出。。。当前号码： " + phonevar)
+        print("达到测试次数上限，退出。。。当前号码： " + phonevar)
         break
 
 # browser.close()
