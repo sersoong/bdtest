@@ -2,7 +2,7 @@ from selenium import webdriver
 from time import sleep
 import json
 
-start=2931
+start=3012
 end=10000
 errcount = 0
 frequency = 80
